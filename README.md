@@ -1,5 +1,5 @@
 # 1. Quick Start
-The task is to implement an app that lists news, and a single page with swiping feature.
+The task that was done is to implement an app that lists news, and a single page with swiping feature with all other requirements.
 
 ```
 1. Clone sample project from github: https://github.com/houssam-amraoui/NewsCodingChallenge.git
