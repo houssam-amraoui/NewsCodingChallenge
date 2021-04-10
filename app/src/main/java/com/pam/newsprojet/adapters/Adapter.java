@@ -32,18 +32,19 @@ public class Adapter extends RecyclerView.Adapter<Adapter.bodiholder> {
 
     private Context context;
     private List<PostItem> postItems = new ArrayList<>();
+
     private SimpleDateFormat dateFormat = new SimpleDateFormat("d MMM yyyy", new Locale("ar", "ma"));
     private SimpleDateFormat dateFormatcontent = new SimpleDateFormat("dd/MM/yyyy - hh:mm", new Locale("ar", "ma"));
 
+
     public Adapter(Context context) {
         this.context = context;
-
-
     }
 
     @NotNull
     @Override
     public bodiholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         return new bodiholder(LayoutInflater.from(parent.getContext()).inflate(R.layout.post_item, parent, false));
     }
 
@@ -58,7 +59,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.bodiholder> {
 
         //Glide.with(context).load(postItems.get(position).getimg).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.image);
 
-        holder.itemView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.bounce));
+       // holder.itemView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.bounce));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             int position = holder.getAdapterPosition();
 
@@ -91,6 +92,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.bodiholder> {
         postItems.addAll(items);
         notifyDataSetChanged();
     }
+
+
 
     static class bodiholder extends RecyclerView.ViewHolder {
         TextView t1, t2, categaory;

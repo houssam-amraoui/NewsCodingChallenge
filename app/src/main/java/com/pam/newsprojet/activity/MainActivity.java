@@ -63,17 +63,19 @@ public class MainActivity extends AppCompatActivity {
                     if (lastVisiblePosition != 0 && !isLoading && countItem - 1 == lastVisiblePosition) {
                         isLoading = true;
                         mPage++;
-                        loadProducts();
+                        loadPost();
                     }
             }
 
         });
-        loadProducts();
+
+        loadPost();
     }
 
-    private void loadProducts() {
+    private void loadPost() {
+
         if (isNetworkAvailable()) {
-            ApiClient.getInterface().getposts(1).enqueue(new Callback<List<PostItem>>() {
+            ApiClient.getInterface().getposts(mPage).enqueue(new Callback<List<PostItem>>() {
                 @Override
                 public void onResponse(@NonNull Call<List<PostItem>> call, @NonNull Response<List<PostItem>> response) {
                     if (mPage == 1) {
